@@ -1,0 +1,85 @@
+.person-popup {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    display: none;
+  }
+
+.person-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    padding: 5% 6%;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 5%;
+    background-color: var(--white);
+    width: 50%;
+    position: relative;
+}
+
+.person-content .close-btn {
+    align-self: flex-end;
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.person-content .close-btn img {
+    width: 30px;
+}
+
+
+.person-content .person-profile {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.person-popup .person-profile img {
+    border-radius: 20px;
+    max-width: 320px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.person-content .person-profile h3 {
+    color: var(--darkblue);
+    font-size: 24px;
+    margin: 10px 0 5px 0;
+    text-align: center;
+}
+
+.person-content .person-profile h4 {
+    color: var(--darkblue);
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 700px) {
+
+    .person-content .close-btn {
+        top: 5px;
+        right: 5px;
+    }
+
+    .person-content .person-profile {
+        margin-top: 20px;
+    }
+    .person-content {
+        width: 90%;
+        margin-top: 20%;
+    }
+}
