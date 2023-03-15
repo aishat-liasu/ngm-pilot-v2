@@ -121,9 +121,14 @@ function App() {
   return (
     <div className="App">
       <header className="header">
-        <img src={logo} alt="NGM Logo" className="logo" />
+        <a
+          href="http://ngmplatform.com/"
+          target="_blank"
+        >
+          <img src={logo} alt="NGM Logo" className="logo" />
+        </a>
       </header>
-      <section className="hero">
+      {/* <section className="hero">
         <article className="heroText">
           <h1>About NGM PILOT</h1>
           <p>
@@ -148,10 +153,10 @@ function App() {
             />
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="section-speakers">
-        <h2>Panelists</h2>
+      {/* <section className="section-speakers">
+        <h2>Facilitators</h2>
 
         <div className="slider">
           <button
@@ -185,7 +190,7 @@ function App() {
             &gt;
           </button>
         </div>
-      </section>
+      </section> */}
 
       {openPopup && <PersonPopup popupControl={setOpenPopup} {...popupData} />}
 
@@ -312,6 +317,43 @@ function App() {
             A group picture with some of the panelist
           </figcaption>
         </figure>
+      </section>
+
+      <section className="section-speakers">
+        <h2>Facilitators</h2>
+
+        <div className="slider">
+          <button
+            onClick={scrollLeft}
+            className="slider-btn left-arrow"
+            disabled={leftArrowDisabled}
+          >
+            &lt;
+          </button>
+          <ul className="speaker-list">
+            {speakerList.length > 0 &&
+              speakerList.map((speaker, index) => (
+                <PersonCard
+                  imageSrc={speaker.imageSrc}
+                  altText={speaker.name}
+                  name={speaker.name}
+                  jobTitle={speaker.jobTitle}
+                  description={speaker.description}
+                  index={index}
+                  openPopup={openPopup}
+                  setOpenPopup={setOpenPopup}
+                  setPopupData={setPopupData}
+                />
+              ))}
+          </ul>
+          <button
+            onClick={scrollRight}
+            className="slider-btn right-arrow"
+            disabled={rightArrowDisabled}
+          >
+            &gt;
+          </button>
+        </div>
       </section>
 
       <footer className="footer">
